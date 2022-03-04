@@ -1,0 +1,327 @@
+/* RESET CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO BODY */
+body{
+    background: rgb(214,223,223);
+    background: linear-gradient(0deg, rgba(214,223,223,1) 0%, rgba(8,7,6,1) 100%);
+}
+
+/* POSICION LOGO E IMAGENES RRSS */
+.superior{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "logo fox fox der";
+    margin: 2rem 2rem 0rem 2rem;
+}
+.logo{
+    grid-area: logo;
+    justify-self: start;
+}
+.fox{
+    grid-area: fox;
+    align-self: center;
+    justify-self: center;
+}
+.der{
+    grid-area: der;
+    justify-self: end;
+}
+.der{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* COLOR Y POSISCION H1 (nombre pagina) */
+.fox h1{
+    color: rgb(219, 88, 41);
+    font-family: 'Courgette', cursive;
+    font-size: 40px;
+}
+.logo img{
+    width: 150px;
+}
+
+/* POSICION RRSS */
+.rrss{
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+}
+
+/* BUSCADOR DE ELEMENTOS */
+.buscar{
+    display: flex;
+    flex-direction: row;
+}
+.buscarBarra input {
+    height: 30px;
+    width: 85px;
+}
+
+/* BARRA DE NAVEGACION */
+nav{
+    padding: 0.8rem;
+}
+.Barr{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(219, 88, 41);
+    border: solid 3px rgb(192, 78, 37);
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-family: 'Source Code Pro', monospace;
+}
+.Barr a{
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+    transition: all 1s;
+}
+.Barr a:hover{
+    color: black;
+}
+
+/* CATALOGO EN INICIO */
+.contenedorCat{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(1,auto);
+    grid-template-areas: 
+    "uno dos tres"
+    "uno dos tres";
+}
+.uno{
+    grid-area: uno;
+}
+.dos{
+    grid-area: dos;
+}
+.tres{
+    grid-area: tres;
+}
+.textCat{
+    width: 350px;
+    text-align: center;
+}
+.catalogo{
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.687);
+}
+.catalogo a{
+    text-decoration: none;
+    color: black;
+}
+iframe{
+    margin-top: 5rem;
+}
+
+/* TAMAÑO Y POSICION IMAGENES EN TODOS LOS MAIN */
+main{
+    font-family: 'Source Code Pro', monospace;
+    margin-bottom: 30px;
+}
+main section{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    justify-content: space-around;
+}
+main section a{
+    text-decoration: none;
+    color: black;
+}
+main section div img{
+    width: 350px;
+    height: 350px;
+}
+
+main section div{
+    opacity: 0.80;
+}
+main section div:hover{
+    opacity: 1;
+    box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
+    -webkit-box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
+    -moz-box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
+}
+
+/* PAGINA FORMULARIO CONTACTO */
+.form{
+    background-image: url(../media/img/fondocontacto.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: max;
+    height: 800px;
+}
+.form h2{
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 40%;
+    font-size: 30px;
+}
+.pregunta{
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+}
+fieldset{
+    margin: 1rem;
+    width:max;
+    position: relative;
+    left: 39%;;
+    border: none;
+    width: 200px;
+}
+form div{
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:0.4rem;
+}
+
+/* CARRO DE COMPRAS */
+.carro{
+    background-image: url(../media/img/fondocart.jpeg);
+    background-size: cover;
+    width: max;
+    height: 800px;
+    position: sticky;
+}
+.carro h2{
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    font-size: 30px;
+}
+.carroVacio{
+    width: max;
+    height: 200px;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.carroVacio a{
+    color: black;
+    font-weight:lighter;
+    text-decoration:underline;
+    padding-top: 1rem;
+}
+
+/* FOOTER */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding-left: 450px;
+    padding-right: 450px;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    padding-left: 80px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 320px) {
+    .superior{
+        margin: 5px;
+        padding: 2px;
+        grid-template-areas:
+            "logo der der";
+    }
+    .der{
+        justify-self: end;
+    }
+    .fox{
+        display: none;
+    }
+    .contenedorCat{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas: 
+            "uno"
+            "dos"
+            "tres";
+    }
+    .uno, .dos, .tres{
+        justify-self: center;
+        align-self: center;
+    }
+    .uno{
+        grid-area: uno;
+    }
+    .dos{
+        grid-area: dos;
+    }
+    .tres{
+        grid-area: tres;
+    }
+    .buscar{
+        display: none;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .superior{
+        margin: 5px;
+        padding: 2px;
+        grid-template-areas:
+            "logo der der";
+    }
+    .der{
+        justify-self: end;
+    }
+    .fox{
+        display: none;
+    }
+    .contenedorCat{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas: 
+            "uno"
+            "dos"
+            "tres";
+    }
+    .uno, .dos, .tres{
+        justify-self: center;
+        align-self: center;
+    }
+    .uno{
+        grid-area: uno;
+    }
+    .dos{
+        grid-area: dos;
+    }
+    .tres{
+        grid-area: tres;
+    }
+    .buscar{
+        display: none;
+        
+    }
+    .Barr li{
+        display: none;
+    }
+}
