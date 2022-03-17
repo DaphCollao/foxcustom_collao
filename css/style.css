@@ -4,7 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Variables Base */
+:root{
+    --orange: rgb(219, 88, 41);
+    --text-color: rgb(245, 245, 245);
+    --title-font:'Courgette', cursive;
+    --content-font: 'Source Code Pro', monospace;
+}
 /* FONDO BODY */
 body{
     width: 100%;
@@ -44,8 +50,8 @@ body{
 
 /* COLOR Y POSISCION H1 (nombre pagina) */
 .fox h1{
-    color: rgb(219, 88, 41);
-    font-family: 'Courgette', cursive;
+    color: var(--orange);
+    font-family: var(--title-font);
     font-size: 40px;
 }
 .logo img{
@@ -77,28 +83,27 @@ body{
 }
 
 /* BARRA DE NAVEGACION */
-nav{
-    padding: 0.8rem;
+
+.navbar{
+    background-color: var(--orange);
+    /* border: solid 3px rgb(192, 78, 37); */
 }
-.navBarr{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: rgb(219, 88, 41);
-    border: solid 3px rgb(192, 78, 37);
-    border-radius: 5px;
-    padding: 0.7rem;
-    font-family: 'Source Code Pro', monospace;
+.navbar-toggler-icon,
+.nav-item{
+    background-color: var(--orange);  
 }
-.navBarr a{
+.navbar-nav{
+    background-color: var(--orange);
+    font-family: var(--content-font);
+}
+
+.navbar .nav-link{
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     font-size: medium;
     transition: all 1s;
 }
-.navBarr a:hover{
+.nav-link:hover{
     color: black;
 }
 
@@ -138,7 +143,7 @@ iframe{
 
 /* TAMAÑO Y POSICION IMAGENES EN TODOS LOS MAIN */
 main{
-    font-family: 'Source Code Pro', monospace;
+    font-family: var(--content-font);
     margin-bottom: 30px;
     min-height: 70vh;
 }
@@ -149,20 +154,28 @@ main section{
     padding-top: 20px;
     justify-content: space-around;
 }
+.subtitle{
+    color: whitesmoke;
+}
 main section a{
     text-decoration: none;
     color: black;
+}
+.btn-orange{
+    color: #fff;
+    background-color: var(--orange);
+    border-color: var(--orange);
 }
 main section div img{
     width: 350px;
     height: 400px;
 }
 
-main section div{
+.catalogo{
     opacity: 0.80;
     transition: transform 0.6s ease-in-out;
 }
-main section div:hover{
+.catalogo:hover{
     opacity: 1;
     box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
     -webkit-box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
@@ -179,17 +192,18 @@ main section div:hover{
 .bgform{
     background-image: url(../media/img/bg_contacto.jpeg);
     background-size: cover;
-    height: 800px;
+    width: 100vw;
+    height: 100vh;
 }
 .form h2{
-    color: white;
+    color: var(--text-color);
     text-align: center;
     position: relative;
     top: 40%;
     font-size: 30px;
 }
 .pregunta{
-    color: white;
+    color: var(--text-color);
     text-align: center;
     padding-top: 20px;
 }
@@ -199,7 +213,7 @@ fieldset{
     left: 39%;;
     border: none;
     width: 200px;
-    color: white;
+    color: var(--text-color);
 }
 form div{
     position: relative;
@@ -214,9 +228,11 @@ form div{
 .bgcarro{
     background-image: url(../media/img/bg_carro.jpg);
     background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 .carro h2{
-    color: white;
+    color: var(--text-color);
     text-align: center;
     position: relative;
     top: 50%;
@@ -226,7 +242,7 @@ form div{
     width: 100%;
     height: 100px;
     margin-top: 10px;
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -234,7 +250,7 @@ form div{
     text-align: center;
 }
 .carroVacio a{
-    color: white;
+    color: var(--text-color);
     font-weight:lighter;
     text-decoration:underline;
     padding-top: 1rem;
@@ -258,7 +274,7 @@ footer a{
 }
 .footer,
 .footer a{
-    color: white;
+    color: var(--text-color);
 }
 
 /* RESPONSIVE DESIGN */
@@ -312,4 +328,13 @@ footer a{
         align-content: center;
         gap: 2rem;
     }
+    .pregunta{
+        font-size: 1srem;
+    }
 }
+/* @media (min-width: 992px){
+    .navbar li {
+        margin-left : 5em;
+        margin-right : 5em;
+    }
+} */
