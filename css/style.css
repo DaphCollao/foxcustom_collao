@@ -13,8 +13,8 @@
 }
 /* FONDO BODY */
 body{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgb(214,223,223);
     background: linear-gradient(0deg, rgba(214,223,223,1) 0%, rgba(8,7,6,1) 100%);
 }
@@ -287,6 +287,9 @@ footer a{
         grid-template-areas:
             "logo fox fox";
     }
+    .logo{
+        width: 100px;
+    }
     .der{
         display: none;
     }
@@ -295,7 +298,7 @@ footer a{
         width: 500px;
     }
     .fox h1{
-        font-size: 3rem;
+        font-size: 1rem;
     }
     .contenedorCat{
         display: grid;
