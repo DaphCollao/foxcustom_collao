@@ -10,17 +10,19 @@
     --text-color: rgb(245, 245, 245);
     --title-font:'Courgette', cursive;
     --content-font: 'Source Code Pro', monospace;
+    --widht-img-cat: 25rem;
 }
 /* FONDO BODY */
 body{
-    width: 100%;
-    height: 100%;
-    background: rgb(214,223,223);
-    background: linear-gradient(0deg, rgba(214,223,223,1) 0%, rgba(8,7,6,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    background-size: cover;
 }
 
 /* POSICION LOGO E IMAGENES RRSS */
 .superior{
+    height: 17vh;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 1fr;
@@ -52,10 +54,10 @@ body{
 .fox h1{
     color: var(--orange);
     font-family: var(--title-font);
-    font-size: 40px;
+    font-size: 4em;
 }
 .logo img{
-    width: 150px;
+    width: 10rem;
     transition: transform 1s ease-in-out;
 }
 .logo img:hover{
@@ -69,7 +71,7 @@ body{
     gap: 0.4rem;
 }
 .rrss img{
-    width: 40px;
+    width: 2.5rem;
 }
 
 /* BUSCADOR DE ELEMENTOS */
@@ -78,8 +80,8 @@ body{
     flex-direction: row;
 }
 .buscarBarra input {
-    height: 20px;
-    width: 85px;
+    height: 1.8rem;
+    width: 5rem;
 }
 
 /* BARRA DE NAVEGACION */
@@ -110,6 +112,7 @@ body{
 /* CATALOGO EN INICIO */
 .contenedorCat{
     display: grid;
+    gap: 1rem;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(1,auto);
     grid-template-areas: 
@@ -126,14 +129,15 @@ body{
     grid-area: tres;
 }
 .textCat{
-    width: 350px;
+    width: var(--widht-img-cat);
     text-align: center;
 }
 .catalogo{
-    width: 350px;
+    width: var(--widht-img-cat);
     background-color: rgba(255, 255, 255, 0.687);
 }
 .catalogo a{
+    width: var(--widht-img-cat);
     text-decoration: none;
     color: black;
 }
@@ -145,13 +149,13 @@ iframe{
 main{
     font-family: var(--content-font);
     margin-bottom: 30px;
-    min-height: 70vh;
+    min-height: 80vh;
 }
 main section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 20px;
+    padding-top: 1rem;
     justify-content: space-around;
 }
 .subtitle{
@@ -167,7 +171,7 @@ main section a{
     border-color: var(--orange);
 }
 main section div img{
-    width: 350px;
+    width: var(--widht-img-cat);
     height: 400px;
 }
 
@@ -177,9 +181,9 @@ main section div img{
 }
 .catalogo:hover{
     opacity: 1;
-    box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
-    -webkit-box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
-    -moz-box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
+    box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+    -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+    -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
     transform: scale(1.1);
 }
 /* ORGANIZACION MAIN pagina Carrito */
@@ -192,6 +196,7 @@ main section div img{
 .bgform{
     background-image: url(../media/img/bg_contacto.jpeg);
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
 }
@@ -239,7 +244,7 @@ form div{
     font-size: 30px;
 }
 .carroVacio{
-    width: 100%;
+    width: 100vw;
     height: 100px;
     margin-top: 10px;
     color: var(--text-color);
@@ -262,23 +267,26 @@ footer{
     flex-direction: row;
     justify-content: center;
     justify-content: space-around;
-    padding: 1rem 25rem;
+    align-items: center;
+    padding: 1rem 10rem;
     border-radius: 2px;
     border-top: solid rgb(135, 134, 134) 1.5px;
-    height: 40px;
+    height: 5vh;
+    background-image: linear-gradient(to right, black, grey);
 }
-footer a{
+footer a, footer p{
     text-decoration: none;
-    color: black;
-    padding-left: 80px;
-}
-.footer,
-.footer a{
     color: var(--text-color);
+}
+footer a:hover{
+    color: var(--orange);
 }
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
+    body{
+        width: 100vw;
+    }
     .superior{
         margin: 5px;
         padding: 1px;
@@ -292,10 +300,10 @@ footer a{
     }
     .fox{
         grid-area: fox;
-        width: 500px;
+        width: 30rem;
     }
     .fox h1{
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .contenedorCat{
         display: grid;
@@ -328,13 +336,14 @@ footer a{
         align-content: center;
         gap: 2rem;
     }
-    .pregunta{
-        font-size: 1srem;
+    .pregunta p{
+        font-size: 1em;
+    }
+
+    footer{
+        padding: 0;
+    }
+    footer a, footer p{
+        font-size: 0.9em;
     }
 }
-/* @media (min-width: 992px){
-    .navbar li {
-        margin-left : 5em;
-        margin-right : 5em;
-    }
-} */
