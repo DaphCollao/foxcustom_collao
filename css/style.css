@@ -13,6 +13,9 @@
     --widht-img-cat: 25rem;
 }
 /* FONDO BODY */
+html{
+    width: 100vw;
+}
 body{
     width: 100vw;
     height: 100vh;
