@@ -213,7 +213,6 @@ main section div img{
     width: 100vw;
     background-image: url(../media/img/bg_contacto.jpeg);
     background-size: cover;
-    background-repeat: no-repeat;
 }
 .form h2{
     color: var(--text-color);
@@ -273,8 +272,7 @@ form div{
     text-decoration:underline;
     padding-top: 1rem;
 }
-.mainCarro,
-.mainContact{
+.mainCarro{
     height: 74vh;
 }
 /* FOOTER */
