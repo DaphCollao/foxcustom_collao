@@ -6,21 +6,36 @@
 }
 /* Variables Base */
 :root{
+    --colorbackground: rgb(38, 37, 37);
     --orange: rgb(219, 88, 41);
     --text-color: rgb(245, 245, 245);
     --title-font:'Courgette', cursive;
     --content-font: 'Source Code Pro', monospace;
+    --widht-img-cat: 25rem;
+    --height-header: 15vh;
+    --height-navbar: 5vh;
+    --height-main: 70vh;
+    --height-footer: 5vh;
 }
 /* FONDO BODY */
+html{
+    width: 100vw;
+}
 body{
     width: 100vw;
     height: 100vh;
+<<<<<<< HEAD
     background: rgb(214,223,223);
     background: linear-gradient(0deg, rgba(214,223,223,1) 0%, rgba(8,7,6,1) 100%);
+=======
+    background: var(--colorbackground);
+    background-size: cover;
+>>>>>>> dev
 }
 
 /* POSICION LOGO E IMAGENES RRSS */
 .superior{
+    height: var(--height-header);
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 1fr;
@@ -31,11 +46,13 @@ body{
 .logo{
     grid-area: logo;
     justify-self: start;
+    align-self: center;
 }
 .fox{
     grid-area: fox;
     align-self: center;
     justify-self: center;
+    text-shadow: 3px 3px 8px rgb(5, 5, 5);
 }
 .der{
     grid-area: der;
@@ -52,10 +69,10 @@ body{
 .fox h1{
     color: var(--orange);
     font-family: var(--title-font);
-    font-size: 40px;
+    font-size: 4em;
 }
 .logo img{
-    width: 150px;
+    width: 10rem;
     transition: transform 1s ease-in-out;
 }
 .logo img:hover{
@@ -69,7 +86,7 @@ body{
     gap: 0.4rem;
 }
 .rrss img{
-    width: 40px;
+    width: 2.5rem;
 }
 
 /* BUSCADOR DE ELEMENTOS */
@@ -78,15 +95,15 @@ body{
     flex-direction: row;
 }
 .buscarBarra input {
-    height: 20px;
-    width: 85px;
+    height: 1.8rem;
+    width: 5rem;
 }
 
 /* BARRA DE NAVEGACION */
 
 .navbar{
     background-color: var(--orange);
-    /* border: solid 3px rgb(192, 78, 37); */
+    height: var(--height-navbar);
 }
 .navbar-toggler-icon,
 .nav-item{
@@ -103,13 +120,11 @@ body{
     font-size: medium;
     transition: all 1s;
 }
-.nav-link:hover{
-    color: black;
-}
 
 /* CATALOGO EN INICIO */
 .contenedorCat{
     display: grid;
+    gap: 1rem;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(1,auto);
     grid-template-areas: 
@@ -126,33 +141,46 @@ body{
     grid-area: tres;
 }
 .textCat{
-    width: 350px;
+    width: var(--widht-img-cat);
     text-align: center;
 }
 .catalogo{
-    width: 350px;
+    width: var(--widht-img-cat);
     background-color: rgba(255, 255, 255, 0.687);
 }
 .catalogo a{
+    width: var(--widht-img-cat);
     text-decoration: none;
     color: black;
 }
 iframe{
-    margin-top: 5rem;
+    margin: 4rem 0rem;
+}
+iframe:hover{
+    box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+    -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+    -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
 }
 
 /* TAMAÑO Y POSICION IMAGENES EN TODOS LOS MAIN */
 main{
     font-family: var(--content-font);
-    margin-bottom: 30px;
-    min-height: 70vh;
+    /* margin-bottom: 30px; */
+    min-height: var(--height-main);
 }
 main section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 20px;
+    padding-top: 1rem;
     justify-content: space-around;
+}
+.mainDesign{
+    padding-top: 1rem;
+    transition: all 0.6s;
+}
+.mainDesign:hover{
+    transform: scale(1.1);
 }
 .subtitle{
     color: whitesmoke;
@@ -167,7 +195,7 @@ main section a{
     border-color: var(--orange);
 }
 main section div img{
-    width: 350px;
+    width: var(--widht-img-cat);
     height: 400px;
 }
 
@@ -177,35 +205,33 @@ main section div img{
 }
 .catalogo:hover{
     opacity: 1;
-    box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
-    -webkit-box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
-    -moz-box-shadow: 0px -2px 41px 7px rgba(57,54,54,0.75);
+    box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+    -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+    -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
     transform: scale(1.1);
 }
 /* ORGANIZACION MAIN pagina Carrito */
 .mainCarro{
-    height: 400px;
-    padding-top: 200px;
+    padding-top: 12rem;
 }
 
 /* PAGINA FORMULARIO CONTACTO */
 .bgform{
+    width: 100vw;
     background-image: url(../media/img/bg_contacto.jpeg);
     background-size: cover;
-    width: 100vw;
-    height: 100vh;
+    background-repeat: no-repeat;
 }
 .form h2{
     color: var(--text-color);
     text-align: center;
-    position: relative;
-    top: 40%;
-    font-size: 30px;
+    font-size: 2em;
+    padding-top: 3rem;
 }
 .pregunta{
     color: var(--text-color);
     text-align: center;
-    padding-top: 20px;
+    padding: 1.2rem 1rem 0rem;
 }
 fieldset{
     margin: 1rem;
@@ -229,7 +255,6 @@ form div{
     background-image: url(../media/img/bg_carro.jpg);
     background-size: cover;
     width: 100vw;
-    height: 100vh;
 }
 .carro h2{
     color: var(--text-color);
@@ -239,7 +264,7 @@ form div{
     font-size: 30px;
 }
 .carroVacio{
-    width: 100%;
+    width: 100vw;
     height: 100px;
     margin-top: 10px;
     color: var(--text-color);
@@ -262,26 +287,57 @@ footer{
     flex-direction: row;
     justify-content: center;
     justify-content: space-around;
-    padding: 1rem 25rem;
+    padding: 0.5rem 10rem;
     border-radius: 2px;
     border-top: solid rgb(135, 134, 134) 1.5px;
-    height: 40px;
+    height: var(--height-footer);
+    background-image: linear-gradient(to right, black, grey);
 }
-footer a{
+footer a, footer p{
     text-decoration: none;
-    color: black;
-    padding-left: 80px;
-}
-.footer,
-.footer a{
     color: var(--text-color);
+}
+footer a:hover{
+    color: var(--orange);
 }
 
 /* RESPONSIVE DESIGN */
+@media screen and (max-width: 375px){
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .bgcarro{
+        background-image: none;
+    }
+    .bgform{
+        background-image: none;
+    }
+    .fox{
+        font-size: 0.8em;
+    }
+    .logo>a>img{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 667px){
+    .fox h1{
+        font-size: 0.6em;
+    }
+    .logo img{
+        width: 10rem;
+    }
+    .der{
+        display: none;
+    }
+} 
+
 @media screen and (max-width: 768px) {
+    body{
+        width: 100vw;
+    }
     .superior{
-        margin: 5px;
-        padding: 1px;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: 1fr;
         grid-template-areas:
@@ -295,10 +351,14 @@ footer a{
     }
     .fox{
         grid-area: fox;
-        width: 500px;
+        width: 30rem;
     }
     .fox h1{
+<<<<<<< HEAD
         font-size: 1rem;
+=======
+        font-size: 4em;
+>>>>>>> dev
     }
     .contenedorCat{
         display: grid;
@@ -322,22 +382,32 @@ footer a{
     .tres{
         grid-area: tres;
     }
-    .buscar{
-        display: none;
-    }
     .ropa{
         display: flex;
         flex-direction: column;
         align-content: center;
         gap: 2rem;
     }
-    .pregunta{
-        font-size: 1srem;
+    .pregunta p{
+        font-size: 1em;
+    }
+
+    footer{
+        padding: 0;
+    }
+    footer a, footer p{
+        font-size: 0.9em;
+    }
+
+}
+@media screen and (max-width: 933px) {
+    .fox h1{
+        font-size: 3em;
+    }
+    .buscar{
+        display: none;
+    }
+    .logo>a>img{
+        width: 8rem;
     }
 }
-/* @media (min-width: 992px){
-    .navbar li {
-        margin-left : 5em;
-        margin-right : 5em;
-    }
-} */
