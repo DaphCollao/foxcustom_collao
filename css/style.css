@@ -6,11 +6,16 @@
 }
 /* Variables Base */
 :root{
+    --colorbackground: rgb(38, 37, 37);
     --orange: rgb(219, 88, 41);
     --text-color: rgb(245, 245, 245);
     --title-font:'Courgette', cursive;
     --content-font: 'Source Code Pro', monospace;
     --widht-img-cat: 25rem;
+    --height-header: 15vh;
+    --height-navbar: 5vh;
+    --height-main: 70vh;
+    --height-footer: 5vh;
 }
 /* FONDO BODY */
 html{
@@ -19,13 +24,13 @@ html{
 body{
     width: 100vw;
     height: 100vh;
-    background: black;
+    background: var(--colorbackground);
     background-size: cover;
 }
 
 /* POSICION LOGO E IMAGENES RRSS */
 .superior{
-    height: 17vh;
+    height: var(--height-header);
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 1fr;
@@ -36,11 +41,13 @@ body{
 .logo{
     grid-area: logo;
     justify-self: start;
+    align-self: center;
 }
 .fox{
     grid-area: fox;
     align-self: center;
     justify-self: center;
+    text-shadow: 3px 3px 8px rgb(5, 5, 5);
 }
 .der{
     grid-area: der;
@@ -91,7 +98,7 @@ body{
 
 .navbar{
     background-color: var(--orange);
-    /* border: solid 3px rgb(192, 78, 37); */
+    height: var(--height-navbar);
 }
 .navbar-toggler-icon,
 .nav-item{
@@ -107,9 +114,6 @@ body{
     color: var(--text-color);
     font-size: medium;
     transition: all 1s;
-}
-.nav-link:hover{
-    color: black;
 }
 
 /* CATALOGO EN INICIO */
@@ -145,14 +149,19 @@ body{
     color: black;
 }
 iframe{
-    margin-top: 5rem;
+    margin: 4rem 0rem;
+}
+iframe:hover{
+    box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+    -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+    -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
 }
 
 /* TAMAÑO Y POSICION IMAGENES EN TODOS LOS MAIN */
 main{
     font-family: var(--content-font);
-    margin-bottom: 30px;
-    min-height: 80vh;
+    /* margin-bottom: 30px; */
+    min-height: var(--height-main);
 }
 main section{
     display: flex;
@@ -160,6 +169,13 @@ main section{
     flex-wrap: wrap;
     padding-top: 1rem;
     justify-content: space-around;
+}
+.mainDesign{
+    padding-top: 1rem;
+    transition: all 0.6s;
+}
+.mainDesign:hover{
+    transform: scale(1.1);
 }
 .subtitle{
     color: whitesmoke;
@@ -191,29 +207,26 @@ main section div img{
 }
 /* ORGANIZACION MAIN pagina Carrito */
 .mainCarro{
-    height: 400px;
-    padding-top: 200px;
+    padding-top: 12rem;
 }
 
 /* PAGINA FORMULARIO CONTACTO */
 .bgform{
+    width: 100vw;
     background-image: url(../media/img/bg_contacto.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
 }
 .form h2{
     color: var(--text-color);
     text-align: center;
-    position: relative;
-    top: 40%;
-    font-size: 30px;
+    font-size: 2em;
+    padding-top: 3rem;
 }
 .pregunta{
     color: var(--text-color);
     text-align: center;
-    padding-top: 20px;
+    padding: 1.2rem 1rem 0rem;
 }
 fieldset{
     margin: 1rem;
@@ -237,7 +250,6 @@ form div{
     background-image: url(../media/img/bg_carro.jpg);
     background-size: cover;
     width: 100vw;
-    height: 100vh;
 }
 .carro h2{
     color: var(--text-color);
@@ -270,11 +282,10 @@ footer{
     flex-direction: row;
     justify-content: center;
     justify-content: space-around;
-    align-items: center;
-    padding: 1rem 10rem;
+    padding: 0.5rem 10rem;
     border-radius: 2px;
     border-top: solid rgb(135, 134, 134) 1.5px;
-    height: 5vh;
+    height: var(--height-footer);
     background-image: linear-gradient(to right, black, grey);
 }
 footer a, footer p{
@@ -286,13 +297,42 @@ footer a:hover{
 }
 
 /* RESPONSIVE DESIGN */
+@media screen and (max-width: 375px){
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .bgcarro{
+        background-image: none;
+    }
+    .bgform{
+        background-image: none;
+    }
+    .fox{
+        font-size: 0.8em;
+    }
+    .logo>a>img{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 667px){
+    .fox h1{
+        font-size: 0.6em;
+    }
+    .logo img{
+        width: 10rem;
+    }
+    .der{
+        display: none;
+    }
+} 
+
 @media screen and (max-width: 768px) {
     body{
         width: 100vw;
     }
     .superior{
-        margin: 5px;
-        padding: 1px;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: 1fr;
         grid-template-areas:
@@ -306,7 +346,7 @@ footer a:hover{
         width: 30rem;
     }
     .fox h1{
-        font-size: 2rem;
+        font-size: 4em;
     }
     .contenedorCat{
         display: grid;
@@ -330,9 +370,6 @@ footer a:hover{
     .tres{
         grid-area: tres;
     }
-    .buscar{
-        display: none;
-    }
     .ropa{
         display: flex;
         flex-direction: column;
@@ -348,5 +385,17 @@ footer a:hover{
     }
     footer a, footer p{
         font-size: 0.9em;
+    }
+
+}
+@media screen and (max-width: 933px) {
+    .fox h1{
+        font-size: 3em;
+    }
+    .buscar{
+        display: none;
+    }
+    .logo>a>img{
+        width: 8rem;
     }
 }
