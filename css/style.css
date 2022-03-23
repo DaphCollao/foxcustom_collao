@@ -24,13 +24,8 @@ html{
 body{
     width: 100vw;
     height: 100vh;
-<<<<<<< HEAD
-    background: rgb(214,223,223);
-    background: linear-gradient(0deg, rgba(214,223,223,1) 0%, rgba(8,7,6,1) 100%);
-=======
     background: var(--colorbackground);
     background-size: cover;
->>>>>>> dev
 }
 
 /* POSICION LOGO E IMAGENES RRSS */
@@ -354,11 +349,7 @@ footer a:hover{
         width: 30rem;
     }
     .fox h1{
-<<<<<<< HEAD
-        font-size: 1rem;
-=======
         font-size: 4em;
->>>>>>> dev
     }
     .contenedorCat{
         display: grid;
