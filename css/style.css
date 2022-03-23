@@ -12,8 +12,7 @@
     --title-font:'Courgette', cursive;
     --content-font: 'Source Code Pro', monospace;
     --widht-img-cat: 25rem;
-    --height-header: 15vh;
-    --height-navbar: 5vh;
+    --height-header: 20vh;
     --height-main: 70vh;
     --height-footer: 5vh;
 }
@@ -30,7 +29,7 @@ body{
 
 /* POSICION LOGO E IMAGENES RRSS */
 .superior{
-    height: var(--height-header);
+    max-height: var(--height-header);
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 1fr;
@@ -98,7 +97,6 @@ body{
 
 .navbar{
     background-color: var(--orange);
-    height: var(--height-navbar);
 }
 .navbar-toggler-icon,
 .nav-item{
@@ -275,7 +273,10 @@ form div{
     text-decoration:underline;
     padding-top: 1rem;
 }
-
+.mainCarro,
+.mainContact{
+    height: 74vh;
+}
 /* FOOTER */
 footer{
     display: flex;
