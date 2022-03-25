@@ -1,0 +1,237 @@
+// -- RESET CC --
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+};
+
+// -- VARIABLES --
+$color-background:rgb(38, 37, 37);
+$color-orange: rgb(219, 88, 41);
+$text-color: rgb(245, 245, 245);
+$title-font:'Courgette', cursive;
+$content-font: 'Source Code Pro', monospace;
+$widht-img-index: 25rem;
+$height-header: 15vh;
+$height-navbar: 5vh;
+$height-main: 65vh;
+$height-footer: 5vh;
+$color-fc: blue;
+$color-ig: rgb(193, 53, 132);
+$color-ws: green;
+
+
+html{
+    width: 100vw;
+};
+body{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: $color-background;
+};
+
+.header{
+    width: 100%;
+    height: $height-header;
+    margin: 2rem;
+    .logo{
+        justify-self: start;
+        align-self: center;
+        img{
+            display: none;
+            transition: transform 1s ease-in-out;
+            &:hover{
+                transform: rotate(360deg);
+            }
+            @media screen and (min-width: 576px) {
+                display: block;
+                width: 6rem;
+            }
+            @media screen and (min-width: 768px) {
+                display: block;
+                width: 10rem;
+            }
+        }
+
+    };
+    .fox-title{
+        padding: 1.5rem;
+        text-align: center;
+        text-shadow: 3px 3px 8px rgb(5, 5, 5);
+        h1{
+            color: $color-orange;
+            font-family: $title-font;
+            font-size: 50px;
+
+            @media screen and (max-width: 576px) {
+                font-size: 35px;
+            }
+            @media screen and (min-width: 768px) {
+                font-size: 50px;
+            }
+        }   
+    };
+
+    .right-side-header{
+        display: none;
+        justify-content: center;
+        padding-top: 2rem;
+        
+        @media screen and (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            gap:1rem;
+            text-align: center;
+        }
+    };
+};
+
+.navbar{    
+    background-color: $color-orange;
+    .navbar-collapse{
+        a{
+        &:hover{
+            color: $text-color !important; 
+        }
+        }
+    }
+}
+
+.carousel-index{
+    width: 60%;
+    margin: auto;
+    padding: 3rem;
+
+    @media screen and (min-width: 768px) {
+        width: 35rem;
+    }
+    .carousel{
+        .carousel-inner{
+            justify-self: center;
+            .carousel-item{
+                .img-fluid{
+                    width: 1rem;
+                }
+                .carousel-caption{
+                    h5{
+                        background-color: black;
+                        color: $color-orange;
+                        text-align: center;
+                    }
+                }
+            }
+            
+        }
+    }
+    
+}
+main{
+    min-height: $height-main;
+    .d-flex{
+        justify-content: center;
+        padding-bottom: 3rem;
+    }
+}
+
+.btn-orange{
+    color: #fff;
+    background-color: $color-orange;
+    border-color: $color-orange;
+}
+
+// -- Pagina Carro -- 
+.bgcarro{
+    background-image: url(../media/img/bg_carro.jpg);
+    background-size: cover;
+    width: 100vw;
+    .mainCarro{
+        padding-top: 12rem;
+        .carro{
+            h2{
+                color: $text-color;
+                text-align: center;
+                position: relative;
+                top: 50%;
+                font-size: 30px;
+            }
+        }
+        .carroVacio{
+            width: 100vw;
+            height: 100px;
+            margin-top: 10px;
+            color: $text-color;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            a{
+                color: $text-color;
+                font-weight:lighter;
+                text-decoration:underline;
+                padding-top: 1rem;
+            }
+        }
+    }
+}    
+
+// -- Pagina Conctacto --
+.bgform{
+    width: 100vw;
+    background-image: url(../media/img/bg_contacto.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    .form {
+        h2{
+            color: $text-color;
+            text-align: center;
+            font-size: 2em;
+            padding-top: 3rem;
+        }
+    }
+    .pregunta{
+        color: $text-color;
+        text-align: center;
+        padding: 1.2rem 1rem 0rem;
+    }
+    fieldset{
+        margin: 1rem;
+        border: none;
+        color: $text-color;
+    }
+}
+
+// -- Footer --
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 0.5rem 10rem;
+    border-radius: 2px;
+    border-top: solid rgb(135, 134, 134) 1.5px;
+    height:$height-footer;
+    background-image: linear-gradient(to right, black, grey);
+
+    div{
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap:0.4rem;
+    };
+
+    a{
+        text-decoration: none;
+        color: $text-color;
+        &:hover{
+            color:$color-orange
+        }
+    };
+
+    p{
+        text-decoration: none;
+        color: $text-color;
+    }
+}
