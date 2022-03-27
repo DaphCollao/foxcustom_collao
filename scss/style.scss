@@ -12,28 +12,30 @@ $text-color: rgb(245, 245, 245);
 $title-font:'Courgette', cursive;
 $content-font: 'Source Code Pro', monospace;
 $widht-img-index: 25rem;
-$height-header: 15vh;
+$height-header: 6rem;
 $height-navbar: 5vh;
 $height-main: 65vh;
 $height-footer: 5vh;
-$color-fc: blue;
+$color-fc: rgb(66, 103, 178);
 $color-ig: rgb(193, 53, 132);
-$color-ws: green;
+$color-ws: rgb(37, 211, 102);
 
 
 html{
     width: 100vw;
 };
+
 body{
     width: 100vw;
     min-height: 100vh;
     background-color: $color-background;
 };
 
+
+// -- Header, logo, titulo fc, redes sociales
 .header{
-    width: 100%;
+    width: 100vw;
     height: $height-header;
-    margin: 2rem;
     .logo{
         justify-self: start;
         align-self: center;
@@ -43,10 +45,6 @@ body{
             &:hover{
                 transform: rotate(360deg);
             }
-            @media screen and (min-width: 576px) {
-                display: block;
-                width: 6rem;
-            }
             @media screen and (min-width: 768px) {
                 display: block;
                 width: 10rem;
@@ -55,16 +53,16 @@ body{
 
     };
     .fox-title{
-        padding: 1.5rem;
+        padding-top: 1.5rem;
         text-align: center;
         text-shadow: 3px 3px 8px rgb(5, 5, 5);
         h1{
             color: $color-orange;
             font-family: $title-font;
-            font-size: 50px;
+            font-size: 250%;
 
-            @media screen and (max-width: 576px) {
-                font-size: 35px;
+            @media screen and (min-width: 576px) {
+                font-size: 45px;
             }
             @media screen and (min-width: 768px) {
                 font-size: 50px;
@@ -76,7 +74,25 @@ body{
         display: none;
         justify-content: center;
         padding-top: 2rem;
-        
+
+        .bi-facebook{
+            color: $text-color !important;
+            &:hover{
+                color: $color-fc !important;
+            }
+        };
+        .bi-instagram{
+            color: $text-color !important;
+            &:hover{
+                color: $color-ig !important;
+            }
+        };
+        .bi-whatsapp{
+            color: $text-color !important;
+            &:hover{
+                color: $color-ws !important;
+            }
+        }
         @media screen and (min-width: 768px) {
             display: flex;
             flex-direction: row;
@@ -84,52 +100,83 @@ body{
             text-align: center;
         }
     };
+    @media screen and (min-width: 768px) {
+        margin: 2rem;
+        height: 8rem;
+    }
+    @media screen and (min-width: 878px) {
+        margin: 2rem;
+        height: 6rem;
+    }
 };
 
 .navbar{    
     background-color: $color-orange;
     .navbar-collapse{
         a{
+            font-family: $content-font;
         &:hover{
             color: $text-color !important; 
         }
         }
     }
-}
+};
 
+// -- Diseño Main Carusel e Iframe
 .carousel-index{
-    width: 60%;
     margin: auto;
-    padding: 3rem;
-
+    width: 100%;
     @media screen and (min-width: 768px) {
-        width: 35rem;
+        width: 90%;
     }
     .carousel{
         .carousel-inner{
-            justify-self: center;
+            &:hover{
+                box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75) !important;
+                -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+                -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+            }    
             .carousel-item{
-                .img-fluid{
-                    width: 1rem;
-                }
                 .carousel-caption{
                     h5{
                         background-color: black;
                         color: $color-orange;
                         text-align: center;
+                        font-size: 1.4em;
+                        font-family: $content-font;
+                        padding: 0.5rem 0rem;
                     }
                 }
             }
             
         }
     }
-    
 }
+
 main{
+    h2{
+        font-family: $content-font;
+    }
+    .card{
+        font-family: $content-font;  
+    }
+    .subtitle{
+        color: $text-color;
+        font-family: $content-font;
+        margin: 1.5rem 0rem;
+    }
     min-height: $height-main;
     .d-flex{
         justify-content: center;
-        padding-bottom: 3rem;
+        padding: 3rem 0rem;
+        iframe{
+            margin-bottom: 1rem;
+            &:hover{
+                box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+                -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+                -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+            }    
+        }
     }
 }
 
@@ -137,6 +184,7 @@ main{
     color: #fff;
     background-color: $color-orange;
     border-color: $color-orange;
+    font-family: $content-font;
 }
 
 // -- Pagina Carro -- 
@@ -175,7 +223,7 @@ main{
     }
 }    
 
-// -- Pagina Conctacto --
+// -- Pagina Contacto --
 .bgform{
     width: 100vw;
     background-image: url(../media/img/bg_contacto.jpeg);
@@ -189,15 +237,25 @@ main{
             padding-top: 3rem;
         }
     }
+
     .pregunta{
         color: $text-color;
         text-align: center;
-        padding: 1.2rem 1rem 0rem;
     }
     fieldset{
-        margin: 1rem;
         border: none;
         color: $text-color;
+        padding-bottom: 3rem;
+    }
+    @media screen and (min-width: 768px) {
+        .pregunta{
+            padding: 1.2rem 1rem 0rem;
+        }
+        fieldset{
+            margin: 2rem;
+            border: none;
+            color: $text-color;
+        }    
     }
 }
 
