@@ -10,7 +10,7 @@
     <title>Home | Fox Custom</title>
 </head>
 <body class="container-fluid">
-    
+    <!-- Header -->
     <header class="row">
         <section class="container header">
             <div class="row">
@@ -42,74 +42,134 @@
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand">FC</a>
+                <a class="navbar-brand"> FC </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-around">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.html"> Home </a></li>
                         <li class="nav-item"><a class="nav-link" href="./pages/poleras.html"> Poleras </a></li>
                         <li class="nav-item"><a class="nav-link" href="./pages/polerones.html"> Polerones </a></li>
                         <li class="nav-item"><a class="nav-link" href="./pages/personalizados.html"> Personalizados </a></li>
-                        <li class="nav-item"><a class="nav-link" href="./pages/personalizados.html"> Carrito </a></li>
+                        <li class="nav-item"><a class="nav-link" href="./pages/carrito.html"> Carrito </a></li>
                     </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="..." aria-label="Search">
-                    <button class="btn btn-outline-dark" type="submit"> Buscar </button>
-                </form>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="..." aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit"> Buscar </button>
+                    </form>
                 </div>
             </div>
         </nav>
     </div>
     
     <!-- MAIN -->
-
-    <div class="row">
-        <main class="mt-2">
+    <main class="row">
+        <div class="mt-5 col-md-6 col-lg-4">
             <section class="carousel-index">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleControls-1" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <a href="./pages/poleras.html"><img src="./media/img/index1.jpg" class="d-block w-100 img-fluid" alt="..."> 
+                            <a href="./pages/poleras.html"><img src="./media/img/index-diseño1.jpg" class="d-block w-100 img-fluid" alt="Diseño Calavera Indio"> 
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5 class="pl-5 pr-5">Nuevos Diseños</h5>
+                                </div>
+                            </a>                        
+                        </div>
+                        <div class="carousel-item">
+                            <a href="./pages/poleras.html"><img src="./media/img/index-diseño2.png" class="d-block w-100 img-fluid" alt="Diseño Odin"> 
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Nuevos Diseños</h5>
                                 </div>
                             </a>
                         </div>
                         <div class="carousel-item">
-                            <a href="./pages/polerones.html"><img src="./media/img/index3.jpg" class="d-block w-100 img-fluid" alt="...">
-                                <div class="carousel-caption d-none d-md-block ">
-                                    <h5>Polerones</h5>
+                            <a href="./pages/poleras.html"><img src="./media/img/index-diseño3.jpg" class="d-block w-100 img-fluid" alt="Diseño Calavera Vikingo"> 
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Nuevos Diseños</h5>
                                 </div>
-                            </a>
+                            </a>                        
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Atrás</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls-1" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>    
+            </section>
+        </div>
+        <div class="mt-5 col-md-6 col-lg-4">
+            <section class="carousel-index">
+                <div id="carouselExampleControls-2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="./pages/personalizados.html"><img src="./media/img/index-personalizado1.png" class="d-block w-100 img-fluid" alt="Diseño Harry Styles"> 
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Diseños Personalizados</h5>
+                                </div>
+                            </a>                        
                         </div>
                         <div class="carousel-item">
-                            <a href="./pages/personalizados.html"><img src="./media/img/index4.jpg" class="d-block w-100 img-fluid" alt="...">
+                            <a href="./pages/personalizados.html"><img src="./media/img/index-personalizado2.png" class="d-block w-100 img-fluid" alt="Diseño La sirenita"> 
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>Personalizados</h5>
+                                    <h5>Nuevos Personalizados</h5>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-2" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
+                        <span class="visually-hidden">Atrás</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls-2" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                        <span class="visually-hidden">Siguiente</span>
                     </button>
-                </div>
+                </div>    
             </section>
-            <section class="d-flex">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/NHNBjDRnlfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls></iframe>        
+        </div>
+        <div class="mt-5 col-md-12 col-lg-4">
+            <section class="carousel-index">
+                <div id="carouselExampleControls-3" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="./pages/polerones.html"><img src="./media/img/index-poleron1.png" class="d-block w-100 img-fluid" alt="Diseño Ghost"> 
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5 class="mt-2">Diseños Polerones</h5>
+                                </div>
+                            </a>                        
+                        </div>
+                        <div class="carousel-item">
+                            <a href="./pages/polerones.html"><img src="./media/img/index-poleron2.png" class="d-block w-100 img-fluid" alt="diseño Cat-Dog"> 
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5 class="mt-2">Diseños Polerones</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-3" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Atrás</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls-3" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>    
             </section>
-        </main>    
-    </div>
+        </div>
+        <section class="d-flex">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NHNBjDRnlfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls></iframe>        
+        </section>
+    </main>
+
     <!--PIE DE PAGINA-->
     <div class="row">
-        <footer>
+        <footer class="position-fixed bottom-0">
             <p> ©Mad Hatter </p>
             <p> <a href="#"> Empresa </a> </p>
             <p> <a href="#"> Preguntas </a> </p>
