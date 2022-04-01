@@ -9,24 +9,43 @@
 $color-background:rgb(38, 37, 37);
 $color-orange: rgb(219, 88, 41);
 $text-color: rgb(245, 245, 245);
-$title-font:'Courgette', cursive;
+$title-font: 'Carter One', cursive; //opcion 2
 $content-font: 'Source Code Pro', monospace;
 $widht-img-index: 25rem;
-$height-header: 6rem;
-$height-navbar: 5vh;
-$height-main: 65vh;
-$height-footer: 5vh;
 $color-fc: rgb(66, 103, 178);
 $color-ig: rgb(193, 53, 132);
 $color-ws: rgb(37, 211, 102);
 
+// -- MIXIN --
+@mixin text-color-center {
+    color: $text-color;
+    text-align: center;
+}
+
+// -- MAP --
+$heights:(
+    header : 6rem,
+    navbar : 5vh,
+    main : 65vh,
+    footer : 5vh,
+);
+
+$breakpoints: (
+    sm : 576px,
+    md : 768px,
+    lg : 901px,
+);
+
+// --------------------------------------------------------------
+
+// -- Estructuta general en HTML y BODY
 
 html{
     width: 100vw;
 };
 
 body{
-    width: 100vw;
+    @extend html;
     min-height: 100vh;
     background-color: $color-background;
 };
@@ -34,8 +53,8 @@ body{
 
 // -- Header, logo, titulo fc, redes sociales
 .header{
-    width: 100vw;
-    height: $height-header;
+    @extend html;
+    height: map-get($heights, header);
     .logo{
         justify-self: start;
         align-self: center;
@@ -45,27 +64,27 @@ body{
             &:hover{
                 transform: rotate(360deg);
             }
-            @media screen and (min-width: 768px) {
+            @media screen and (min-width: map-get($breakpoints, md)) {
                 display: block;
-                width: 10rem;
+                width: 9rem;
             }
         }
 
     };
     .fox-title{
-        padding-top: 1.5rem;
+        padding: 1.5rem 0rem;
         text-align: center;
-        text-shadow: 3px 3px 8px rgb(5, 5, 5);
+
         h1{
             color: $color-orange;
             font-family: $title-font;
-            font-size: 250%;
+            font-size: 180%;
 
-            @media screen and (min-width: 576px) {
+            @media screen and (min-width: map-get($breakpoints, sm)) {
                 font-size: 45px;
             }
-            @media screen and (min-width: 768px) {
-                font-size: 50px;
+            @media screen and (min-width: map-get($breakpoints, md)) {
+                font-size: 45px;
             }
         }   
     };
@@ -93,7 +112,7 @@ body{
                 color: $color-ws !important;
             }
         }
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: map-get($breakpoints, md)) {
             display: flex;
             flex-direction: row;
             gap:1rem;
@@ -101,12 +120,12 @@ body{
         }
     };
     //revisar tamaño de texto antes de dejar este definitivo
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
         margin: 2rem;
         height: 8rem;
     }
-    @media screen and (min-width: 878px) {
-        margin: 2rem;
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+        margin-bottom: 2rem;
         height: 6rem;
     }
 };
@@ -116,6 +135,7 @@ body{
     .navbar-collapse{
         a{
             font-family: $content-font;
+            font-weight: bolder;
         &:hover{
             color: $text-color !important; 
         }
@@ -127,7 +147,8 @@ body{
 .carousel-index{
     margin: auto;
     width: 100%;
-    @media screen and (min-width: 768px) {
+
+    @media screen and (min-width: map-get($breakpoints, md)) {
         width: 90%;
     }
     .carousel{
@@ -157,6 +178,7 @@ body{
 main{
     h2{
         font-family: $content-font;
+
     }
     .card{
         font-family: $content-font;  
@@ -166,14 +188,14 @@ main{
         font-family: $content-font;
         margin: 1.5rem 0rem;
     }
-    min-height: $height-main;
+    min-height: map-get($heights,  main);
     .d-flex{
         justify-content: center;
         padding: 3rem 0rem;
         iframe{
             margin-bottom: 1rem;
             &:hover{
-                box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+                box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75) !important;
                 -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
                 -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
             }    
@@ -192,20 +214,20 @@ main{
 .bgcarro{
     background-image: url(../media/img/bg_carro.jpg);
     background-size: cover;
-    width: 100vw;
+    @extend html;
+    font-family: $content-font;
     .mainCarro{
         padding-top: 12rem;
         .carro{
             h2{
-                color: $text-color;
-                text-align: center;
+                @include text-color-center();
                 position: relative;
                 top: 50%;
                 font-size: 30px;
             }
         }
         .carroVacio{
-            width: 100vw;
+            @extend html;
             height: 100px;
             margin-top: 10px;
             color: $text-color;
@@ -226,29 +248,27 @@ main{
 
 // -- Pagina Contacto --
 .bgform{
-    width: 100vw;
+    @extend html;
     background-image: url(../media/img/bg_contacto.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     .form {
         h2{
-            color: $text-color;
-            text-align: center;
+            @include text-color-center();
             font-size: 2em;
             padding-top: 3rem;
         }
     }
 
     .pregunta{
-        color: $text-color;
-        text-align: center;
+        @include text-color-center()
     }
     fieldset{
         border: none;
         color: $text-color;
         padding-bottom: 3rem;
     }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: map-get($breakpoints, md)) {
         .pregunta{
             padding: 1.2rem 1rem 0rem;
         }
@@ -264,12 +284,11 @@ main{
 footer{
     display: flex;
     flex-direction: row;
-    justify-content: center;
     justify-content: space-around;
     padding: 0.5rem 10rem;
     border-radius: 2px;
     border-top: solid rgb(135, 134, 134) 1.5px;
-    height:$height-footer;
+    height: map-get($heights, footer);
     background-image: linear-gradient(to right, black, grey);
 
     div{
