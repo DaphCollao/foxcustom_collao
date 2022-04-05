@@ -213,6 +213,7 @@ main .d-flex iframe:hover {
 .bgcarro {
   background-image: url(../media/img/bg_carro.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Source Code Pro", monospace;
 }
 

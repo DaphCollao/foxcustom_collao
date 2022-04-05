@@ -213,6 +213,7 @@ main{
 .bgcarro{
     background-image: url(../media/img/bg_carro.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     @extend html;
     font-family: $content-font;
     .mainCarro{
