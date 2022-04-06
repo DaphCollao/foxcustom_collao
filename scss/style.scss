@@ -93,7 +93,7 @@ body{
         display: none;
         justify-content: center;
         padding-top: 2rem;
-
+        
         .bi-facebook{
             color: $text-color !important;
             &:hover{
@@ -129,6 +129,7 @@ body{
     }
 };
 
+// Diseño Navbar
 .navbar{    
     background-color: $color-orange;
     .navbar-collapse{
@@ -138,6 +139,35 @@ body{
         &:hover{
             color: $text-color !important; 
         }
+        }
+    }
+    .navbarDiv{
+        .navbarRrss{
+            display: flex;
+            flex-direction: row;
+            gap:1rem;
+            text-align: center;
+            .faceNav{
+                color: $text-color !important;
+                &:hover{
+                    color: $color-fc !important;
+                }
+            };
+            .instaNav{
+                color: $text-color !important;
+                &:hover{
+                    color: $color-ig !important;
+                }
+            };
+            .wspNav{
+                color: $text-color !important;
+                &:hover{
+                    color: $color-ws !important;
+                }
+            }
+            @media screen and (min-width: map-get($breakpoints, md)) {
+                display: none;
+            }
         }
     }
 };

@@ -142,6 +142,48 @@ body {
   color: whitesmoke !important;
 }
 
+.navbar .navbarDiv .navbarRrss {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+  text-align: center;
+}
+
+.navbar .navbarDiv .navbarRrss .faceNav {
+  color: whitesmoke !important;
+}
+
+.navbar .navbarDiv .navbarRrss .faceNav:hover {
+  color: #4267b2 !important;
+}
+
+.navbar .navbarDiv .navbarRrss .instaNav {
+  color: whitesmoke !important;
+}
+
+.navbar .navbarDiv .navbarRrss .instaNav:hover {
+  color: #c13584 !important;
+}
+
+.navbar .navbarDiv .navbarRrss .wspNav {
+  color: whitesmoke !important;
+}
+
+.navbar .navbarDiv .navbarRrss .wspNav:hover {
+  color: #25d366 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar .navbarDiv .navbarRrss {
+    display: none;
+  }
+}
+
 .carousel-index {
   margin: auto;
   width: 100%;
