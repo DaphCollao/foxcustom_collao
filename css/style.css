@@ -5,7 +5,7 @@
           box-sizing: border-box;
 }
 
-html, body, .header, .bgcarro, .bgcarro .mainCarro .carroVacio, .bgform {
+html, body, .headerSection, .bgcarro, .bgcarro .mainCarro .carroVacio, .bgform {
   width: 100vw;
 }
 
@@ -14,11 +14,11 @@ body {
   background-color: #262525;
 }
 
-.header {
+.headerSection {
   height: 6rem;
 }
 
-.header .logo {
+.headerSection .logoFc {
   -ms-grid-column-align: start;
       justify-self: start;
   -ms-flex-item-align: center;
@@ -26,7 +26,7 @@ body {
       align-self: center;
 }
 
-.header .logo img {
+.headerSection .logoFc img {
   display: none;
   -webkit-transition: -webkit-transform 1s ease-in-out;
   transition: -webkit-transform 1s ease-in-out;
@@ -34,42 +34,42 @@ body {
   transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
-.header .logo img:hover {
+.headerSection .logoFc img:hover {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 
 @media screen and (min-width: 768px) {
-  .header .logo img {
+  .headerSection .logoFc img {
     display: block;
     width: 9rem;
   }
 }
 
-.header .fox-title {
+.headerSection .fox-title {
   padding: 1.5rem 0rem;
   text-align: center;
 }
 
-.header .fox-title h1 {
+.headerSection .fox-title h1 {
   color: #db5829;
   font-family: "Carter One", cursive;
   font-size: 180%;
 }
 
 @media screen and (min-width: 576px) {
-  .header .fox-title h1 {
+  .headerSection .fox-title h1 {
     font-size: 45px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .header .fox-title h1 {
+  .headerSection .fox-title h1 {
     font-size: 45px;
   }
 }
 
-.header .right-side-header {
+.headerSection .right-side-header {
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -77,32 +77,32 @@ body {
   padding-top: 2rem;
 }
 
-.header .right-side-header .bi-facebook {
+.headerSection .right-side-header .bi-facebook {
   color: whitesmoke !important;
 }
 
-.header .right-side-header .bi-facebook:hover {
+.headerSection .right-side-header .bi-facebook:hover {
   color: #4267b2 !important;
 }
 
-.header .right-side-header .bi-instagram {
+.headerSection .right-side-header .bi-instagram {
   color: whitesmoke !important;
 }
 
-.header .right-side-header .bi-instagram:hover {
+.headerSection .right-side-header .bi-instagram:hover {
   color: #c13584 !important;
 }
 
-.header .right-side-header .bi-whatsapp {
+.headerSection .right-side-header .bi-whatsapp {
   color: whitesmoke !important;
 }
 
-.header .right-side-header .bi-whatsapp:hover {
+.headerSection .right-side-header .bi-whatsapp:hover {
   color: #25d366 !important;
 }
 
 @media screen and (min-width: 768px) {
-  .header .right-side-header {
+  .headerSection .right-side-header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -116,14 +116,14 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .header {
+  .headerSection {
     margin: 2rem;
     height: 8rem;
   }
 }
 
 @media screen and (min-width: 901px) {
-  .header {
+  .headerSection {
     margin-bottom: 2rem;
     height: 6rem;
   }
@@ -139,6 +139,10 @@ body {
 }
 
 .navbar .navbar-collapse a:hover {
+  color: whitesmoke !important;
+}
+
+.navbar .navbarDiv #fcNavbar:hover {
   color: whitesmoke !important;
 }
 
@@ -201,7 +205,11 @@ body {
   -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
 }
 
-.carousel-index .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+.carousel-index .carousel .carousel-inner .carousel-caption a {
+  text-decoration: none;
+}
+
+.carousel-index .carousel .carousel-inner .carousel-caption h5 {
   background-color: black;
   color: #db5829;
   text-align: center;

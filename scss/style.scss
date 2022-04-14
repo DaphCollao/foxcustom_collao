@@ -52,10 +52,10 @@ body{
 
 
 // -- Header, logo, titulo fc, redes sociales
-.header{
+.headerSection{
     @extend html;
     height: map-get($heights, header);
-    .logo{
+    .logoFc{
         justify-self: start;
         align-self: center;
         img{
@@ -142,6 +142,11 @@ body{
         }
     }
     .navbarDiv{
+        #fcNavbar{
+            &:hover{
+                color: $text-color !important; 
+            }
+        }
         .navbarRrss{
             display: flex;
             flex-direction: row;
@@ -187,16 +192,17 @@ body{
                 -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
                 -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
             }    
-            .carousel-item{
-                .carousel-caption{
-                    h5{
-                        background-color: black;
-                        color: $color-orange;
-                        text-align: center;
-                        font-size: 1.4em;
-                        font-family: $content-font;
-                        padding: 0.5rem 0rem;
-                    }
+            .carousel-caption{
+                a{
+                    text-decoration: none;
+                }
+                h5{
+                    background-color: black;
+                    color: $color-orange;
+                    text-align: center;
+                    font-size: 1.4em;
+                    font-family: $content-font;
+                    padding: 0.5rem 0rem;
                 }
             }
             

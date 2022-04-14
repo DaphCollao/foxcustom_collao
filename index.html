@@ -16,10 +16,10 @@
 <body class="container-fluid">
     <!-- Header -->
     <header class="row">
-        <section class="container header">
+        <section class="container headerSection">
             <div class="row">
             <!--LOGO Y NOMBRE DE EMPRESA-->
-                <div class="col-md-3 img-fluid logo"> <a href="./index.html"> <img src="./media/img/logo_fcc.png" alt="Logo Empresa Fox Custom"> </a> </div>
+                <div class="col-md-3 img-fluid logoFc"> <a href="./index.html"> <img src="./media/img/logo_fcc.png" alt="Logo Empresa Fox Custom"> </a> </div>
                 <div class="col-md-6 fox-title"> <h1>Fox Custom Clothing</h1> </div>
             <!-- REDES SOCIALES -->
                 <section class="col-md-3">
@@ -42,11 +42,11 @@
             </div>
         </section>
     </header>
-    <!-- MENU DE PAGINA WEB -->
+    <!-- NavBar - MENU DE PAGINA WEB -->
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid navbarDiv">
-                <a class="navbar-brand" href="./index.html"> FC </a>
+                <a class="navbar-brand" href="./index.html" id="fcNavbar"> FC </a>
                 <section class="navbarRrss">
                     <div class="col-4">
                         <a href="https://www.facebook.com/foxcustomclothingcl/" target="_blank"> <i class="bi bi-facebook fs-1 faceNav"></i>
@@ -62,7 +62,7 @@
                     </div>
                 </section>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-around">
@@ -88,25 +88,20 @@
                 <div id="carouselExampleControls-1" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <a href="./pages/poleras.html"><img src="./media/img/index-diseno1.jpg" class="d-block w-100 img-fluid" alt="Diseño Calavera Indio" title="Calavera Indio"> 
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="pl-5 pr-5">Nuevos Diseños</h5>
-                                </div>
-                            </a>                        
+                            <a href="./pages/poleras.html"><img src="./media/img/index-diseno1.jpg" class="d-block w-100 img-fluid" alt="Diseño Calavera Indio" title="Calavera Indio"></a>                        
                         </div>
                         <div class="carousel-item">
                             <a href="./pages/poleras.html"><img src="./media/img/index-diseno2.jpg" class="d-block w-100 img-fluid" alt="Diseño Odin" title="Dios Odin"> 
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Nuevos Diseños</h5>
-                                </div>
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="./pages/poleras.html"><img src="./media/img/index-diseno3.jpg" class="d-block w-100 img-fluid" alt="Diseño Calavera Vikingo" title="Calavera Vikingo"> 
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Nuevos Diseños</h5>
-                                </div>
                             </a>                        
+                        </div>
+                        <div class="carousel-caption d-md-block">
+                            <a href="./pages/poleras.html"> 
+                                <h5 class="pl-5 pr-5">Nuevos Diseños</h5>
+                            </a>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-1" data-bs-slide="prev">
@@ -126,17 +121,16 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <a href="./pages/personalizados.html"><img src="./media/img/index-personalizado_1.jpg" class="d-block w-100 img-fluid" alt="Diseño Harry Styles"> 
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Diseños Personalizados</h5>
-                                </div>
                             </a>                        
                         </div>
                         <div class="carousel-item">
                             <a href="./pages/personalizados.html"><img src="./media/img/index-personalizado_2.jpg" class="d-block w-100 img-fluid" alt="Diseño La sirenita"> 
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Nuevos Personalizados</h5>
-                                </div>
                             </a>
+                        </div>
+                        <div class="carousel-caption d-md-block">
+                            <a href="./pages/personalizados.html">
+                                <h5 class="pl-5 pr-5">Nuevos Personalizados</h5>
+                            </a>                        
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-2" data-bs-slide="prev">
@@ -155,17 +149,15 @@
                 <div id="carouselExampleControls-3" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <a href="./pages/polerones.html"><img src="./media/img/index-poleron_1.jpg" class="d-block w-100 img-fluid" alt="Diseño Ghost"> 
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="mt-2">Diseños Polerones</h5>
-                                </div>
-                            </a>                        
+                            <a href="./pages/polerones.html"><img src="./media/img/index-poleron_1.jpg" class="d-block w-100 img-fluid" alt="Diseño Ghost"> </a>                        
                         </div>
                         <div class="carousel-item">
                             <a href="./pages/polerones.html"><img src="./media/img/index-poleron_2.jpg" class="d-block w-100 img-fluid" alt="diseño Cat-Dog"> 
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="mt-2">Diseños Polerones</h5>
-                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-caption d-md-block">
+                            <a href="./pages/polerones.html"> 
+                                <h5 class="mt-2">Diseños Polerones</h5>
                             </a>
                         </div>
                     </div>
