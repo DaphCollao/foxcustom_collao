@@ -5,8 +5,12 @@
           box-sizing: border-box;
 }
 
-html, body, .headerSection, .bgcarro, .bgcarro .mainCarro .carroVacio, .bgform {
-  width: 100vw;
+html, body, .headerSection, .bgcarro, .bgcarro .mainCarro .carroVacio, .bgform, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 
 body {
@@ -15,7 +19,7 @@ body {
 }
 
 .headerSection {
-  height: 6rem;
+  height: 5rem;
 }
 
 .headerSection .logoFc {
@@ -63,18 +67,12 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .headerSection .fox-title h1 {
-    font-size: 45px;
-  }
-}
-
 .headerSection .right-side-header {
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 2rem;
+  padding: 2rem 2rem 0 0;
 }
 
 .headerSection .right-side-header .bi-facebook {
@@ -118,14 +116,15 @@ body {
 @media screen and (min-width: 768px) {
   .headerSection {
     margin: 2rem;
-    height: 8rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
 
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 901px) and (position: landscape) {
   .headerSection {
     margin-bottom: 2rem;
-    height: 6rem;
   }
 }
 
@@ -253,6 +252,10 @@ main .d-flex iframe:hover {
   -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
 }
 
+main .formulario {
+  margin: 0 20%;
+}
+
 .btn-orange {
   color: #fff;
   background-color: #db5829;
@@ -310,11 +313,15 @@ main .d-flex iframe:hover {
   background-repeat: no-repeat;
 }
 
+.bgform .form {
+  padding-bottom: 3rem;
+}
+
 .bgform .form h2 {
   color: whitesmoke;
   text-align: center;
   font-size: 2em;
-  padding-top: 3rem;
+  padding-top: 1.5rem;
 }
 
 .bgform .pregunta {
@@ -325,7 +332,6 @@ main .d-flex iframe:hover {
 .bgform fieldset {
   border: none;
   color: whitesmoke;
-  padding-bottom: 3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -340,6 +346,9 @@ main .d-flex iframe:hover {
 }
 
 footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

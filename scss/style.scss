@@ -8,6 +8,7 @@
 // -- VARIABLES --
 $color-background:rgb(38, 37, 37);
 $color-orange: rgb(219, 88, 41);
+$color-greenish: rgb(101, 197, 178);
 $text-color: rgb(245, 245, 245);
 $title-font: 'Carter One', cursive; //opcion 2
 $content-font: 'Source Code Pro', monospace;
@@ -24,7 +25,7 @@ $color-ws: rgb(37, 211, 102);
 
 // -- MAP --
 $heights:(
-    header : 6rem,
+    header : 5rem,
     navbar : 5vh,
     main : 65vh,
     footer : 5vh,
@@ -39,11 +40,13 @@ $breakpoints: (
 // --------------------------------------------------------------
 
 // -- Estructuta general en HTML y BODY
-
-html{
-    width: 100vw;
-};
-
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
 body{
     @extend html;
     min-height: 100vh;
@@ -80,19 +83,16 @@ body{
             font-family: $title-font;
             font-size: 180%;
 
-            @media screen and (min-width: map-get($breakpoints, sm)) {
-                font-size: 45px;
-            }
-            @media screen and (min-width: map-get($breakpoints, md)) {
+            @media screen and (min-width: map-get($breakpoints, sm)){
                 font-size: 45px;
             }
         }   
-    };
+    }
 
     .right-side-header{
         display: none;
         justify-content: center;
-        padding-top: 2rem;
+        padding: 2rem 2rem 0 0;
         
         .bi-facebook{
             color: $text-color !important;
@@ -121,11 +121,10 @@ body{
     };
     @media screen and (min-width: map-get($breakpoints, md)) {
         margin: 2rem;
-        height: 8rem;
+        height: fit-content;
     }
-    @media screen and (min-width: map-get($breakpoints, lg)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) and (position: landscape){
         margin-bottom: 2rem;
-        height: 6rem;
     }
 };
 
@@ -213,7 +212,6 @@ body{
 main{
     h2{
         font-family: $content-font;
-
     }
     .card{
         font-family: $content-font;  
@@ -235,6 +233,9 @@ main{
                 -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
             }    
         }
+    }
+    .formulario{
+        margin: 0 20%;
     }
 }
 
@@ -292,7 +293,11 @@ main{
         h2{
             @include text-color-center();
             font-size: 2em;
-            padding-top: 3rem;
+            padding-top: 1.5rem;
+        }
+        padding-bottom: 3rem;
+        @media screen and (max-width: map-get($breakpoints, sm)) {
+            padding-bottom: 1.5rem;
         }
     }
 
@@ -302,7 +307,6 @@ main{
     fieldset{
         border: none;
         color: $text-color;
-        padding-bottom: 3rem;
     }
     @media screen and (min-width: map-get($breakpoints, md)) {
         .pregunta{
@@ -318,6 +322,9 @@ main{
 
 // -- Footer --
 footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
