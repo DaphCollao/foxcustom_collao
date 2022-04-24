@@ -1,46 +1,13 @@
-// -- RESET CC --
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-};
-
-// -- VARIABLES --
-$color-background:rgb(38, 37, 37);
-$color-orange: rgb(219, 88, 41);
-$color-greenish: rgb(101, 197, 178);
-$text-color: rgb(245, 245, 245);
-$title-font: 'Carter One', cursive; //opcion 2
-$content-font: 'Source Code Pro', monospace;
-$widht-img-index: 25rem;
-$color-fc: rgb(66, 103, 178);
-$color-ig: rgb(193, 53, 132);
-$color-ws: rgb(37, 211, 102);
-
-// -- MIXIN --
-@mixin text-color-center {
-    color: $text-color;
-    text-align: center;
-}
-
-// -- MAP --
-$heights:(
-    header : 5rem,
-    navbar : 5vh,
-    main : 65vh,
-    footer : 5vh,
-);
-
-$breakpoints: (
-    sm : 576px,
-    md : 768px,
-    lg : 901px,
-);
+@import "reset";
+@import "colores";
+@import "tipografia";
+@import "mixin";
+@import "map";
 
 // --------------------------------------------------------------
 
-// -- Estructuta general en HTML y BODY
-html,body{
+// -- Dimensiones generales en HTML y BODY
+html{
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -56,8 +23,7 @@ body{
 
 // -- Header, logo, titulo fc, redes sociales
 .headerSection{
-    @extend html;
-    height: map-get($heights, header);
+    min-height: map-get($heights, header);
     .logoFc{
         justify-self: start;
         align-self: center;
@@ -72,8 +38,8 @@ body{
                 width: 9rem;
             }
         }
-
     };
+
     .fox-title{
         padding: 1.5rem 0rem;
         text-align: center;
@@ -81,12 +47,29 @@ body{
         h1{
             color: $color-orange;
             font-family: $title-font;
-            font-size: 180%;
+            font-size: 3em;
 
-            @media screen and (min-width: map-get($breakpoints, sm)){
-                font-size: 45px;
+            @media screen and (max-width: 384px){
+                font-size: 1.5em;
             }
-        }   
+            @media screen and (min-width: 385px) and (max-width: map-get($breakpoints, sm)){
+                font-size: 200%;
+            }
+            
+            .foxO{
+                display: none;
+                @media screen and (min-width: map-get($breakpoints, md)) {
+                    display: inline;
+                }
+    
+            }
+            .foxOImg{
+                width: 5rem;
+                @media screen and (min-width: map-get($breakpoints, md)) {
+                    display: none;
+                }
+            }  
+        }
     }
 
     .right-side-header{
@@ -95,19 +78,19 @@ body{
         padding: 2rem 2rem 0 0;
         
         .bi-facebook{
-            color: $text-color !important;
+            color: $text-white !important;
             &:hover{
                 color: $color-fc !important;
             }
         };
         .bi-instagram{
-            color: $text-color !important;
+            color: $text-white !important;
             &:hover{
                 color: $color-ig !important;
             }
         };
         .bi-whatsapp{
-            color: $text-color !important;
+            color: $text-white !important;
             &:hover{
                 color: $color-ws !important;
             }
@@ -119,13 +102,6 @@ body{
             text-align: center;
         }
     };
-    @media screen and (min-width: map-get($breakpoints, md)) {
-        margin: 2rem;
-        height: fit-content;
-    }
-    @media screen and (min-width: map-get($breakpoints, lg)) and (position: landscape){
-        margin-bottom: 2rem;
-    }
 };
 
 // Diseño Navbar
@@ -136,14 +112,14 @@ body{
             font-family: $content-font;
             font-weight: bolder;
         &:hover{
-            color: $text-color !important; 
+            color: $color-greenSec !important; 
         }
         }
     }
     .navbarDiv{
         #fcNavbar{
             &:hover{
-                color: $text-color !important; 
+                color: $color-greenSec !important; 
             }
         }
         .navbarRrss{
@@ -152,19 +128,19 @@ body{
             gap:1rem;
             text-align: center;
             .faceNav{
-                color: $text-color !important;
+                color: $text-white !important;
                 &:hover{
                     color: $color-fc !important;
                 }
             };
             .instaNav{
-                color: $text-color !important;
+                color: $text-white !important;
                 &:hover{
                     color: $color-ig !important;
                 }
             };
             .wspNav{
-                color: $text-color !important;
+                color: $text-white !important;
                 &:hover{
                     color: $color-ws !important;
                 }
@@ -177,6 +153,81 @@ body{
 };
 
 // -- Diseño Main Carusel e Iframe
+main{
+    .order{
+        @media screen and (max-width: 767px) {
+            .order1{
+                order: 1;
+                h2{
+                    text-align: center;
+                }
+                p{
+                    font-size: 1.1em;
+                }
+            }
+            .order2{
+                order: 2;
+            }
+        }
+    }
+    h2{
+        font-family: $content-font;
+        color: $color-greenSec;
+    }
+    p{
+        letter-spacing: 0.1rem;
+    }
+    .waveBg{
+        background-color: $color-greenPrim;
+        .waves{
+            margin: 0;
+            article{
+                h2{
+                    color: $text-darkOrange;
+                }
+                p{
+                    color: $color-background;
+                }
+            }
+        }
+        h3{
+            color: $text-darkOrange;
+        }
+        p{
+            color: $color-background;
+        }
+        iframe{
+            width: 35rem;
+            height: 20rem;
+            margin-bottom: 1rem;
+            &:hover{
+                box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+                -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+                -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
+            }
+            @media screen and (max-width: map-get($breakpoints, md)){
+                width: 25rem;
+                height: 10rem;
+            }    
+        }
+    }
+    article{
+        p{
+            color: $text-white;
+        }
+    }
+    .card{
+        font-family: $content-font;  
+    }
+    .subtitle{
+        margin: 1.5rem 0rem;
+    }
+    min-height: map-get($heights,  main);
+    .formulario{
+        margin: 0 20%;
+    }
+}
+
 .carousel-index{
     margin: auto;
     width: 100%;
@@ -186,6 +237,7 @@ body{
     }
     .carousel{
         .carousel-inner{
+            border-radius: 0.8rem;
             &:hover{
                 box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75) !important;
                 -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
@@ -209,41 +261,14 @@ body{
     }
 }
 
-main{
-    h2{
-        font-family: $content-font;
-    }
-    .card{
-        font-family: $content-font;  
-    }
-    .subtitle{
-        color: $text-color;
-        font-family: $content-font;
-        margin: 1.5rem 0rem;
-    }
-    min-height: map-get($heights,  main);
-    .d-flex{
-        justify-content: center;
-        padding: 3rem 0rem;
-        iframe{
-            margin-bottom: 1rem;
-            &:hover{
-                box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75) !important;
-                -webkit-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
-                -moz-box-shadow: 0px -2px 41px 7px rgba(230, 223, 223, 0.75);
-            }    
-        }
-    }
-    .formulario{
-        margin: 0 20%;
-    }
-}
-
 .btn-orange{
-    color: #fff;
+    color: $text-white;
     background-color: $color-orange;
-    border-color: $color-orange;
+    border-color: $text-darkOrange;
     font-family: $content-font;
+    &:hover{
+        color: $color-greenSec;
+    }
 }
 
 // -- Pagina Carro -- 
@@ -251,10 +276,10 @@ main{
     background-image: url(../media/img/bg_carro.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    @extend html;
+    
     font-family: $content-font;
     .mainCarro{
-        padding-top: 12rem;
+        background-color: #26252588;
         .carro{
             h2{
                 @include text-color-center();
@@ -264,17 +289,16 @@ main{
             }
         }
         .carroVacio{
-            @extend html;
             height: 100px;
             margin-top: 10px;
-            color: $text-color;
+            color: $text-white;
             text-decoration: none;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
             a{
-                color: $text-color;
+                color: $text-white;
                 font-weight:lighter;
                 text-decoration:underline;
                 padding-top: 1rem;
@@ -285,11 +309,10 @@ main{
 
 // -- Pagina Contacto --
 .bgform{
-    @extend html;
-    background-image: url(../media/img/bg_contacto.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(../media/img/bg_contacto2.jpeg);
+    @extend .bgcarro;
     .form {
+        background-color: #26252576;
         h2{
             @include text-color-center();
             font-size: 2em;
@@ -299,23 +322,23 @@ main{
         @media screen and (max-width: map-get($breakpoints, sm)) {
             padding-bottom: 1.5rem;
         }
+        fieldset{
+            border: none;
+            label, div{
+                @include text-color-center();
+            }
+        }
     }
 
     .pregunta{
         @include text-color-center()
-    }
-    fieldset{
-        border: none;
-        color: $text-color;
     }
     @media screen and (min-width: map-get($breakpoints, md)) {
         .pregunta{
             padding: 1.2rem 1rem 0rem;
         }
         fieldset{
-            margin: 2rem;
-            border: none;
-            color: $text-color;
+            margin: 2rem;;
         }    
     }
 }
@@ -326,33 +349,23 @@ footer{
     position: fixed;
     bottom: 0;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     padding: 0.5rem 10rem;
     border-radius: 2px;
     border-top: solid rgb(135, 134, 134) 1.5px;
     height: map-get($heights, footer);
-    background-image: linear-gradient(to right, black, grey);
-
-    div{
-        position: relative;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap:0.4rem;
-    };
+    background: rgb(38,37,37);
+    background: linear-gradient(90deg, rgba(38,37,37,0.8926164215686274) 3%, rgba(153,41,0,1) 43%, rgba(101,197,178,1) 100%);;
 
     a{
         text-decoration: none;
-        color: $text-color;
+        color: $text-white;
         &:hover{
-            color:$color-orange
+            color:$color-greenSec
         }
     };
-
     p{
         text-decoration: none;
-        color: $text-color;
+        color: $text-white;
     }
 }

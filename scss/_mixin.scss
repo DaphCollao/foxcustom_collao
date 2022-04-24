@@ -1,0 +1,5 @@
+// -- MIXIN --
+@mixin text-color-center {
+    color: $text-white;
+    text-align: center;
+}
