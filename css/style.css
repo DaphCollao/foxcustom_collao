@@ -272,7 +272,7 @@ main .waveBg iframe:hover {
 
 @media screen and (max-width: 768px) {
   main .waveBg iframe {
-    width: 25rem;
+    width: 20rem;
     height: 10rem;
   }
 }
