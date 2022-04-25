@@ -154,6 +154,7 @@ body{
 
 // -- Diseño Main Carusel e Iframe
 main{
+    min-height: map-get($heights,  main);
     .order{
         margin: 0;
         @media screen and (max-width: 767px) {
@@ -223,7 +224,6 @@ main{
     .subtitle{
         margin: 1.5rem 0rem;
     }
-    min-height: map-get($heights,  main);
     .formulario{
         margin: 0 20%;
     }
@@ -276,17 +276,17 @@ main{
 .bgcarro{
     background-image: url(../media/img/bg_carro.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     
     font-family: $content-font;
-    .mainCarro{
+    #mainCarro{
+        margin: 2rem;
         background-color: #26252588;
         .carro{
             h2{
                 @include text-color-center();
-                position: relative;
-                top: 50%;
                 font-size: 30px;
+                padding-top: 5rem;
             }
         }
         .carroVacio{
@@ -306,9 +306,6 @@ main{
             }
         }
     }
-    @media screen and (max-width: map-get($breakpoints, sm)) {
-        background-repeat: repeat-y;
-    }
 }    
 
 // -- Pagina Contacto --
@@ -317,14 +314,14 @@ main{
     @extend .bgcarro;
     .form {
         background-color: #26252576;
+        padding-bottom: 1rem;
         h2{
             @include text-color-center();
             font-size: 2em;
             padding-top: 1.5rem;
         }
-        padding-bottom: 3rem;
         @media screen and (max-width: map-get($breakpoints, sm)) {
-            padding-bottom: 1.5rem;
+            padding-bottom: 3.5rem;
         }
         fieldset{
             border: none;
@@ -338,15 +335,13 @@ main{
         @include text-color-center()
     }
     @media screen and (min-width: map-get($breakpoints, md)) {
+        height: fit-content;
         .pregunta{
             padding: 1.2rem 1rem 0rem;
         }
         fieldset{
-            margin: 2rem;;
+            margin: 3rem;;
         }    
-    }
-    @media screen and (max-width: map-get($breakpoints, sm)) {
-        background-repeat: repeat-y;
     }
 }
 

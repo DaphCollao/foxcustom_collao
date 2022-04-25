@@ -19,7 +19,7 @@ body {
 }
 
 .headerSection {
-  min-height: 5rem;
+  min-height: 5vh;
 }
 
 .headerSection .logoFc {
@@ -199,7 +199,7 @@ body {
 }
 
 main {
-  min-height: 65vh;
+  min-height: 60vh;
 }
 
 main .order {
@@ -341,23 +341,23 @@ main .formulario {
 .bgcarro, .bgform {
   background-image: url(../media/img/bg_carro.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   font-family: "Source Code Pro", monospace;
 }
 
-.bgcarro .mainCarro, .bgform .mainCarro {
+.bgcarro #mainCarro, .bgform #mainCarro {
+  margin: 2rem;
   background-color: #26252588;
 }
 
-.bgcarro .mainCarro .carro h2, .bgform .mainCarro .carro h2 {
+.bgcarro #mainCarro .carro h2, .bgform #mainCarro .carro h2 {
   color: #f5f5f5;
   text-align: center;
-  position: relative;
-  top: 50%;
   font-size: 30px;
+  padding-top: 5rem;
 }
 
-.bgcarro .mainCarro .carroVacio, .bgform .mainCarro .carroVacio {
+.bgcarro #mainCarro .carroVacio, .bgform #mainCarro .carroVacio {
   height: 100px;
   margin-top: 10px;
   color: #f5f5f5;
@@ -375,17 +375,11 @@ main .formulario {
   text-align: center;
 }
 
-.bgcarro .mainCarro .carroVacio a, .bgform .mainCarro .carroVacio a {
+.bgcarro #mainCarro .carroVacio a, .bgform #mainCarro .carroVacio a {
   color: #f5f5f5;
   font-weight: lighter;
   text-decoration: underline;
   padding-top: 1rem;
-}
-
-@media screen and (max-width: 576px) {
-  .bgcarro, .bgform {
-    background-repeat: repeat-y;
-  }
 }
 
 .bgform {
@@ -394,7 +388,7 @@ main .formulario {
 
 .bgform .form {
   background-color: #26252576;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
 }
 
 .bgform .form h2 {
@@ -406,7 +400,7 @@ main .formulario {
 
 @media screen and (max-width: 576px) {
   .bgform .form {
-    padding-bottom: 1.5rem;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -425,17 +419,16 @@ main .formulario {
 }
 
 @media screen and (min-width: 768px) {
+  .bgform {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
   .bgform .pregunta {
     padding: 1.2rem 1rem 0rem;
   }
   .bgform fieldset {
-    margin: 2rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .bgform {
-    background-repeat: repeat-y;
+    margin: 3rem;
   }
 }
 
